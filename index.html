@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Hub</title>
+    <!-- Link to external CSS for styling -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Link to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Student Hub</h1>
+        <!-- Notification bell with a click event -->
+        <div class="notification-bell" onclick="showNotification()">🔔</div>
+    </header>
+    <main>
+        
+        <!-- Grid layout for different features -->
+        <div class="icon-grid">
+            <!-- Icon for Study Material -->
+            <div class="icon pink" onclick="showStudyMaterialOptions()">
+                <i class="fas fa-book-open"></i>
+                <p>Study Material</p>
+            </div>
+
+            <!-- Icon for Lost and Found
+            <div class="icon orange" onclick="navigateTo('lost-and-found')">
+                <i class="fas fa-search"></i>
+                <p>Lost and Found</p>
+            </div> -->
+
+            <div class="icon orange">
+                <!-- Link Lost and Found to a new page -->
+                <a href="lost-and-found.html" target="_blank" style="text-decoration: none; color: inherit;">
+                    <i class="fas fa-search"></i>
+                    <p>Lost and Found</p>
+                </a>
+            </div>
+            
+            <!-- Icon for Resell/Purchase -->
+            <div class="icon purple" onclick="navigateTo('resell-purchase')">
+                <i class="fas fa-dollar-sign"></i>
+                <p>Resell/Purchase (Books, Lab Coat, Notes)</p>
+            </div>
+            <!-- Icon for Seminars & Events -->
+            <div class="icon teal" onclick="navigateTo('seminars-events')">
+                <i class="fas fa-calendar-alt"></i>
+                <p>Seminars & Events</p>
+            </div>
+            <!-- Icon for Internships -->
+            <div class="icon yellow" onclick="navigateTo('internships')">
+                <i class="fas fa-briefcase"></i>
+                <p>Internships</p>
+            </div>
+            <!-- Icon for Hackathons -->
+            <div class="icon red" onclick="navigateTo('hackathons')">
+                <i class="fas fa-code"></i>
+                <p>Hackathons</p>
+            </div>
+            <!-- Icon for Societies -->
+            <div class="icon blue" onclick="navigateTo('societies')">
+                <i class="fas fa-users"></i>
+                <p>Societies</p>
+            </div>
+        </div>
+    
+        <!-- Hidden section for Study Material Options -->
+        <div id="study-material-options" style="display: none;">
+            <h2>Study Material Options</h2>
+            <!-- Button to open IGDTUW Resources -->
+            <button onclick="openLink('https://igdtuwresource.github.io/site/')">IGDTUW Resources</button>
+            <!-- Button to open IGDTUW Fresources -->
+            <button onclick="openLink('https://fresources.tech/home')">IGDTUW Fresources</button>
+            <!-- Back button to hide the Study Material options -->
+            <button onclick="hideStudyMaterialOptions()">Back</button>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 Student Hub | Built with ❤️ by Jyoti Choudhary</p>
+    </footer>
+
+    <!-- JavaScript functionality -->
+    <script>
+        // Function to show the Study Material Options section
+        function showStudyMaterialOptions() {
+            document.getElementById("study-material-options").style.display = "block";
+            document.querySelector(".icon-grid").style.display = "none"; // Hide the icon grid
+        }
+
+        // Function to hide the Study Material Options section
+        function hideStudyMaterialOptions() {
+            document.getElementById("study-material-options").style.display = "none";
+            document.querySelector(".icon-grid").style.display = "flex"; // Show the icon grid
+        }
+
+        // Function to open a link in a new tab
+        function openLink(url) {
+            window.open(url, "_blank");
+        }
+
+        // Placeholder function for navigation (can be extended)
+        function navigateTo(section) {
+            alert(`Navigate to ${section}`); // Replace with actual navigation logic
+        }
+
+        // Placeholder function for notifications (can be extended)
+        function showNotification() {
+            alert("You have new notifications!"); // Replace with actual notification logic
+        }
+    </script>
+</body>
+</html>
+

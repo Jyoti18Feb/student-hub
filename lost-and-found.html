@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost and Found</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Lost and Found</h1>
+    </header>
+    <main>
+        <!-- Back Button to go to Home Page -->
+        <button onclick="window.location.href='index.html'">Back to Home</button>
+
+        <!-- Lost and Found Form and Items Section -->
+        <section class="form-section">
+            <h2>Report Lost/Found Item</h2>
+            <form id="itemForm">
+                <label for="type">Type:</label>
+                <select id="type" name="type" required>
+                    <option value="lost">Lost</option>
+                    <option value="found">Found</option>
+                </select>
+
+                <label for="name">Item Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter item name" required>
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" placeholder="Describe the item" required></textarea>
+
+                <label for="contact">Contact Information:</label>
+                <input type="text" id="contact" name="contact" placeholder="Your email or phone" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section class="items-section">
+            <h2>Recent Listings</h2>
+            <div id="itemsList">
+                <p class="placeholder">No listings yet. Submit a lost or found item above!</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Lost and Found Portal | Built with ❤️ by jyoti choudhary</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
